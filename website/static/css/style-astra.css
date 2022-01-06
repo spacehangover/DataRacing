@@ -1866,7 +1866,7 @@ section {
 }
 .showcase button:hover:after {
   transform: translate(-10px, -10px);
-  width: calc(100% - 10px);
+  width: calc(100%);
 }
 .showcase button:active:after {
   width: 100%;

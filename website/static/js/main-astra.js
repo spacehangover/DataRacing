@@ -255,3 +255,10 @@
   });
 
 })()
+
+
+// window.setTimeout("closeNotifDiv();", 5000);
+
+function closeNotifDiv(){
+  document.getElementById("containerNotif alert-dismissible").style.display="none";
+}

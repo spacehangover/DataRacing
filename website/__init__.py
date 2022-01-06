@@ -7,12 +7,13 @@ from flask_login import LoginManager
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from flask_mail import Mail, Message
 from flask_user import login_required, SQLAlchemyAdapter, UserManager, UserMixin
+from csv import reader
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
-
-UPLOAD_FOLDER = 'E:/Coding/Quantum Web 3.0/website/static/products/'
+# UPLOAD_FOLDER = '/static/products/'
+UPLOAD_FOLDER = 'E:/Coding/DataRacing/website/static/products/'
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
@@ -66,7 +67,7 @@ def create_app():
 
 
 def create_database(app):
-    from .models import User, Role, UserRoles
+    from .models import User, Role, Auto
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created database!')
@@ -88,8 +89,8 @@ def create_admin():
     admin_role = Role.query.filter_by(name="Admin").first()
     member_role = Role.query.filter_by(name="Member").first()
     userRoles = [member_role, admin_role]
-    admin_user = User(email="quantumprinting3d@gmail.com", first_name="Quantum", last_name="Printing",
-                      password=generate_password_hash("Peugeot307xtp", method='sha256'), registered_on=datetime.datetime.now(), roles=userRoles)
+    admin_user = User(email="dataracing@gmail.com", first_name="DataRacing", last_name="Admin",
+                      password=generate_password_hash("DataRacing", method='sha256'), registered_on=datetime.datetime.now(), roles=userRoles)
     db.session.add(admin_user)
     admin_user.confirmed = True
     admin_user.confirmed_on = datetime.datetime.now()

@@ -21,6 +21,52 @@ class User(db.Model, UserMixin):
         return set(args).issubset({role.name for role in self.roles})
 
 
+class Auto(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(100))
+    tipo = db.Column(db.String(100))
+    marca = db.Column(db.String(150))
+    modelo = db.Column(db.String(150))
+    variante = db.Column(db.String(150))
+    motor = db.Column(db.String(100))
+    originalpw = db.Column(db.String(100))
+    modifiedpw = db.Column(db.String(100))
+    gainpw = db.Column(db.String(100))
+    maxgainpw = db.Column(db.String(100))
+    maxgainrpm = db.Column(db.String(100))
+    originaltorque = db.Column(db.String(100))
+    modtorque = db.Column(db.String(100))
+    obd = db.Column(db.String(100))
+    stg1 = db.Column(db.String(100))
+    acc = db.Column(db.String(100))
+    ron = db.Column(db.String(100))
+    vmx = db.Column(db.String(100))
+    cat = db.Column(db.String(100))
+    egr = db.Column(db.String(100))
+    dpf = db.Column(db.String(100))
+    imm = db.Column(db.String(100))
+    swr = db.Column(db.String(100))
+    ms = db.Column(db.String(100))
+    cat = db.Column(db.String(50))
+    # prices
+    pricestg1 = db.Column(db.String(100))
+    pricestg2 = db.Column(db.String(100))
+    dtcdecategronly = db.Column(db.String(100))
+    pricecombo = db.Column(db.String(100))
+    dpfonly = db.Column(db.String(100))
+    dpfcombo = db.Column(db.String(100))
+    # dealer prices
+    dealerpricestg1 = db.Column(db.String(100))
+    dealerpricestg2 = db.Column(db.String(100))
+    dealerdtcdecategronly = db.Column(db.String(100))
+    dealerpricecombo = db.Column(db.String(100))
+    dealerdpfonly = db.Column(db.String(100))
+    dealerdfpcombo = db.Column(db.String(100))
+    # protocolos
+    kess = db.Column(db.String(100))
+    ktag = db.Column(db.String(100))
+
+
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer(), primary_key=True)
@@ -40,6 +86,9 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(150))
     product_price = db.Column(db.Float)
+    product_dimensions = db.Column(db.String(150))
+    product_description = db.Column(db.String(300))
+    product_category = db.Column(db.String(100))
     image_path = db.Column(db.String(400))
 
 

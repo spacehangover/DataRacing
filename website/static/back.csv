@@ -1,0 +1,2 @@
+code,marca,modelo,chart,motor,originalpw,modifiedpw,gainpw,maxgainpw,maxgainrpm,originaltorque,modtorque,obd,stg1,acc,ron,vmx,cat,egr,dpf,imm,swr,ms,cat,pricestg1,pricestg2,dtcdecategronly,pricecombo,dpfonly,dpfcombo,dealerpricestg1,dealerpricestg2,dealerdtcdecategronly,dealerpricecombo,dealerdpfonly,dealerdfpcombo,kess,ktag,
+201,ABARTH,500,3524,1.4T,135,167,32,36,3800,206,276,True,True,True,True,True,True,False,False,False,False,False,TN1,19900,24900,11900,5950,0,0,5970,7470,3570,1785,0,0,121,24,
